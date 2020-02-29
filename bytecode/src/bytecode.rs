@@ -56,7 +56,6 @@ bitflags! {
         const NEW_LOCALS = 0x08;
         const IS_GENERATOR = 0x10;
         const IS_COROUTINE = 0x20;
-        const INCOGNITO = 1 << 15;
     }
 }
 
@@ -446,10 +445,6 @@ impl CodeObject {
             }
         }
         Display(self)
-    }
-
-    pub fn incognito(&self) -> bool {
-        self.flags.contains(CodeFlags::INCOGNITO)
     }
 }
 
